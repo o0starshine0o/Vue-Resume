@@ -71,6 +71,19 @@
     <div class='info-container'>
         <div class='title-container'>
             <span class='pre-icon'></span>
+            <a class='title'>能力列表</a>
+        </div>
+        <div class='content-container content'>
+            <div class='ability'>
+                <template v-for='ability in abilities'>
+                    <img :src='ability'></img>
+                </template>
+            </div>
+        </div>
+    </div>
+    <div class='info-container'>
+        <div class='title-container'>
+            <span class='pre-icon'></span>
             <a class='title'>结尾废话</a>
         </div>
         <div class='content-container content'>
@@ -104,6 +117,7 @@ div{
     align-items: center;
     width: 30px;
     flex-grow: 0;
+    flex-shrink: 0;
     margin: 0 20px;
 }
 
@@ -228,6 +242,15 @@ div{
     max-height: 300px;
     justify-content: center;
 }
+
+.ability{
+    flex-wrap: wrap;
+}
+
+.ability img{
+    max-width: 25%;
+    max-height: 200px;
+}
 </style>
 
 <script>
@@ -239,15 +262,33 @@ export default {
                 sex: '男',
                 birthday: '1992-03-20',
                 collage: '华中科技大学-软件学院（14届）',
-                github: 'https://github.com/o0starshine0o/',
-                nonsense: '周末上午听到王杰老师的节目，下午就开始学习Vue了，顺便就用Vue做了个简历，希望能得到重视。因为只是学习没有搭建完整的开发环境，就用纯文本编辑器做了这份简历。我14年毕业，16年和朋友合伙创业，18年散伙了(T_T)。创业期间几乎包揽了所有的开发工作，服务器用的Python-Django，客户端包括了：Android、iOS、Web、H5、公众号、小程序···但凡普通用户能接触到的客户端都做了，当然也包括最近还完成的快应用。',
-                hope: '如果有机会能与王杰老师一起工作，我希望能通过IT男的一些努力把科学声音做好，也希望能把传播科学声音作为自己的事业。',
+                github: 'https://github.com/o0starshine0o/Vue-Resume',
+                nonsense: '周末上午听到汪诘老师的节目，下午就开始学习Vue了，顺便就用Vue做了个简历，希望能得到重视。因为只是学习没有搭建完整的开发环境，就用纯文本编辑器做了这份简历。我14年毕业，16年和朋友合伙创业，18年散伙了(T_T)。创业期间几乎包揽了所有的开发工作，服务器用的Python-Django，客户端包括了：Android、iOS、Web、H5、公众号、小程序···但凡普通用户能接触到的客户端都做了，当然也包括最近刚完成的快应用。',
+                hope: '如果有机会能与汪诘老师一起工作，我希望能通过IT男的一些努力把科学声音做好，也希望能把传播科学声音作为自己的事业。',
             },
             contentInfo:{
                 email: 'tohys@qq.com',
                 wechat: 'husthys',
                 qq: '765870829'
             },
+            abilities:[
+                require('./ability/0.jpg'),
+                require('./ability/1.jpg'),
+                require('./ability/2.jpg'),
+                require('./ability/3.jpg'),
+                require('./ability/4.png'),
+                require('./ability/5.jpg'),
+                require('./ability/6.png'),
+                require('./ability/7.png'),
+                require('./ability/8.png'),
+                require('./ability/9.jpg'),
+                require('./ability/10.png'),
+                require('./ability/11.png'),
+                require('./ability/12.png'),
+                require('./ability/13.jpeg'),
+                require('./ability/14.png'),
+                require('./ability/15.png'),
+            ],
             experences:[
                 {
                     company: {
